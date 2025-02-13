@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <title>Stylish Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #34f176, #764ba2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+        }
+        .header_text {
+            color: #fff;
+            font-size: 2.5rem;
+        }
+        .gif_container img {
+            width: 200px;
+            border-radius: 15px;
+        }
+        #form-main {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            width: 350px;
+        }
+        .feedback-input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            background: rgba(255, 255, 255, 0.6);
+        }
+        #button-blue {
+            background: #ff4b5c;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            width: 100%;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        #button-blue:hover {
+            background: #ff1e40;
+        }
+    </style>
+</head>
+<body>
+    <h6 style="margin:0%;">In your arms, I've found solace,
+        Like flowers find the scent of dawn.</h6>
+    <div class="container">
+        <h1 class="header_text">Hurrayyyy!!</h1>
+       
+        <div class="gif_container">
+            <img src="https://media0.giphy.com/media/T86i6yDyOYz7J6dPhf/giphy.gif" alt="Cute animated illustration">
+        </div>
+    </div>
+    <div id="form-main">
+        <form class="form" id="form1">
+            <select name="place" class="feedback-input" id="place" required>
+                <option value="">Select Place to celebrate valentine</option>
+                <option value="place 1"> Yokohama Park</option>
+                <option value="Place 2">candle light dinner at Cocoparra Restaurant</option>
+                <option value="Place 3">Empress Grdens</option>
+                <option value="Place 4">Osho Garden</option>
+                <option value="Place 5">Rooftop Dining at Paasha Restro</option>
+            </select>
+            <select name="time" class="feedback-input" id="time" required>
+                <option value="">Select Time</option>
+                <option value="Morning">Morning</option>
+                <option value="Afternoon">Afternoon</option>
+                <option value="Evening">Evening</option>
+            </select>
+            <textarea name="text" class="feedback-input" id="comment" placeholder="Comment" required></textarea>
+            <input type="submit" value="Commit" id="button-blue"/>
+
+        </form>
+    </div>
+    
+    <script>
+        document.getElementById("form1").addEventListener("submit", function(event) {
+            event.preventDefault();
+            Swal.fire({
+                icon: 'error',
+                title: 'Sorry!',
+                text: 'Sorry  dear!  Mr. Aman got already booked by ID No. 2315. Better luck next year!',
+            });
+        });
+    </script>
+</body>
+</html>
